@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    color: #e0deda;
+    font-family: 'Fira Mono', monospace;
+}
+
+.header{
+    background-color: #21201e;
+    z-index: 100;
+}
+
+.header_wrap{
+    max-width: 900px;
+    height: 70px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    /*align-items: center;
+    justify-content: space-between;*/
+}
+
+.header_title_wrap{
+    text-align: left;
+}
+
+.header_title_name{
+    font-weight: 600;
+    font-size: 20px;
+    display: inline;
+}
+.shortcut{
+    color: #859900;
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+

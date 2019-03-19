@@ -1,0 +1,98 @@
+body {
+    background-color: #171c20;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content:'' ;
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+header {
+    background-color: #1f2327;
+    padding-bottom: 6px;
+    padding-top: 6px;
+}
+
+.container {
+    width: 715px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+}
+
+.logo p {
+    margin: 0;
+    color: #567842;
+    font-family: Consolas, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.logo h1 {
+    margin: 1px 0px 1px 0px;
+    color: white;
+    font-size: 19px;
+}
+
+nav {
+    float: right;
+    margin-top: 21px;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.menu li {
+    float: left;
+    display: block;
+    margin-right: 30px;
+}
+
+.menu a {
+    width: 100%;
+    height: 25px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bfbfbf;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.menu a svg {
+    margin-right: 5px;
+    stroke: #567842;
+    stroke-width: 2px;
+}
+
+section{
+    border-top: 1px solid #595d61;
+
+}
+.main {
+    width: 715px;
+    margin: 0 auto;
+    padding-top: 20px;
+    color: #bfbfbf;
+}
+
+
+

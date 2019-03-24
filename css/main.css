@@ -94,5 +94,37 @@ section{
     color: #bfbfbf;
 }
 
+.form_input{
+    width: 100%;
+    background-color: #171c20;
+    color:#bfbfbf;
+}
+.form_textarea{
+    margin-bottom: 0px;
+    height: 400px;
+    padding: 10px 12px;
+    min-height: 400px;
+    min-width: 650px;
+    resize: vertical;
+    background-color: #171c20;
+    color:#bfbfbf;
+}
+label {
+    cursor: default;
+}
+.form_label {
+    display: block;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    font-size: 13px;
+}
+
+.form_button{
+    background-color: #a4bd00;
+    color: #fff;
+    width: 100%;
+}
 
 

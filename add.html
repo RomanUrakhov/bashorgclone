@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Жрать жри его</title>
+        <title>Ля какая</title>
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
@@ -27,7 +27,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="./add.html">
+                                <a href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                          width="25" height="25"
                                          viewBox="0 0 32 32"
@@ -42,9 +42,23 @@
         </header>
         <section>
             <div class="main">
-                <p>Hello</p>
+                <form class="form" action="/add">
+                    <fieldset>
+                        <label for="email" class="form_label">Ваш e-mail:</label>
+                        <input type="text" name="email" class="form_input" style="text-align:center">
+                    </fieldset>
+                    <fieldset>
+                        <label for="text" class="form_label">Текст рофла:</label>
+                        <textarea name="text" class="form_textarea" style="margin-top: 0px; margin-bottom: 0px; height: 400px;"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <input type="submit" value="Отправить Путену" class="form_button">
+                    </fieldset>
+                </form>
+                <p>
+                    Отправляя рофл, вы подтверждаете, что сделали вид, что прочитали <a href="https://www.youtube.com/watch?v=G1IbRujko-A">правила</a> и согласны с ними.
+                </p>
             </div>
         </section>
-
     </body>
 </html>

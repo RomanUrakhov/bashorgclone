@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+body a {
+	color: #567842;
+	text-decoration: none;
+}
+
 div {
     box-sizing: border-box;
 }
@@ -83,10 +88,12 @@ nav {
     stroke-width: 2px;
 }
 
+/*
 section{
     border-top: 1px solid #595d61;
-
 }
+*/
+
 .main {
     width: 715px;
     margin: 0 auto;

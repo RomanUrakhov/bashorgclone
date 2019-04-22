@@ -2,8 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Жрать жри его</title>
-        <link rel="stylesheet" href="css/main.css">
+        <title>TipaBash.im - любимый сайт твоей мамы</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}">
     </head>
     <body>
         <header>
@@ -11,14 +12,14 @@
                 <div class="header__wrapper clearfix">
                     <div class="logo">
                         <p>&lt;Ctrl+С&gt;</p>
-                        <h1>TipaBash.im&nbsp;— Копипастник Рунета</h1>
+                        <h1>TipaBash.im&nbsp;— Копипастник WhiteNet'а</h1>
                         <p>&lt;Ctrl+V&gt;</p>
                     </div>
 
                     <nav>
                         <ul class="menu">
                             <li>
-                                <a href="#">
+                                <a href="{{ url_for('posts.post_search') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                          width="25" height="25"
                                          viewBox="0 0 32 32"
@@ -27,7 +28,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="./add.html">
+                                <a href="{{ url_for('adding') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                          width="25" height="25"
                                          viewBox="0 0 32 32"
@@ -40,11 +41,15 @@
                 </div>
             </div>
         </header>
-        <section>
-            <div class="main">
-                <p>Hello</p>
-            </div>
-        </section>
 
+        <div class="main">
+            <section class="posts">
+
+                {% block content %}
+
+                {% endblock %}
+
+            </section>
+        </div>
     </body>
 </html>

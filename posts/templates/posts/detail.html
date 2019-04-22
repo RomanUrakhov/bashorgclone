@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {{ coolstory }}
+    <div class="tags">
+        {% for tag in tags %}
+            <a href="{{ url_for('posts.posts_by_tag', slug=tag.slug) }}">
+                <span class="label">#{{ tag.name }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

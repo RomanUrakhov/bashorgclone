@@ -1,0 +1,28 @@
+{%  extends 'base.html' %}
+
+{%  block title %}
+    щитпостинг
+{% endblock %}
+
+{%  block content_title %}
+    ну давай, попробуй
+{% endblock %}
+
+{% block content %}
+    <form class="form" action="/add">
+        <fieldset>
+            <label for="email" class="form_label">Ваш e-mail:</label>
+            <input type="text" name="email" class="form_input" style="text-align:center">
+        </fieldset>
+        <fieldset>
+            <label for="text" class="form_label">Текст рофла:</label>
+            <textarea name="text" class="form_textarea" style="margin-top: 0px; margin-bottom: 0px; height: 400px;"></textarea>
+        </fieldset>
+        <fieldset>
+            <input type="submit" value="Отправить Путену" class="form_button">
+        </fieldset>
+    </form>
+    <p>
+        Отправляя рофл, вы подтверждаете, что сделали вид, что прочитали <a href="https://www.youtube.com/watch?v=G1IbRujko-A">правила</a> и согласны с ними.
+    </p>
+{% endblock %}

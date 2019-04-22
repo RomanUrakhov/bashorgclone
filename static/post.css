@@ -1,0 +1,63 @@
+.post {
+	margin: 10px auto;
+}
+
+.post:first-of-type {
+	margin-top: 0;
+}
+
+.post_frame {
+	background-color: #1f2327;
+	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+}
+
+.post_head {
+	background-color: #242527;
+	text-align: center;
+}
+
+.post_body {
+	padding: 15px 15px 20px;
+}
+
+.post_footer {
+	display: flex;
+	-webkit-box-pack: justify;
+	height: 50px;
+	align-items: center;
+	background-color: #242527;
+}
+
+.post_total {
+	min-width: 50px;
+	text-align: center;
+	font-size: 15px;
+	font-weight: 650;
+}
+
+.post_button {
+	flex-direction: row;
+	display: flex;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	align-items: center;
+	-webkit-box-align: center;
+	-webkit-box-pack: center;
+	color: #4c4d4d;
+	cursor: pointer;
+	outline: none;
+}
+
+.post_button.dislike:hover {
+	color: #692525;
+}
+.post_button.like:hover {
+	color: #46b641;
+}
+
+.post_footer_date {
+	margin-left: auto;
+	margin-right: 0;
+	padding: 15px 15px;
+}

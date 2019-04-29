@@ -38,8 +38,16 @@ def page_not_found(e):
 
 @posts.route('/')
 def index():
+    page = request.args.get('page')
+    if page and page.isdigit():
+        page = int(page)
+    else:
+        page = 1
+
     posts_list = Post.query.order_by(Post.date.desc())
-    return render_template('posts/post.html', coolstory=posts_list)
+    pages = posts_list.paginate(page=page, per_page=2)
+
+    return render_template('posts/post.html', pages=pages)
 
 
 @posts.route('/<slug>')

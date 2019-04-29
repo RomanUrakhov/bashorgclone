@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='pagination.css') }}">
     </head>
     <body>
         <header>
@@ -44,13 +45,11 @@
         </header>
 
         <div class="main">
-            <section class="posts">
 
-                {% block content %}
+            {% block content %}
 
-                {% endblock %}
+            {% endblock %}
 
-            </section>
         </div>
     </body>
 </html>

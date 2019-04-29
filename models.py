@@ -1,18 +1,6 @@
 from app import db
 import datetime
 import re
-from jinja2 import evalcontextfilter, Markup, escape
-
-_paragraph_re = re.compile(r'(?:\r\n|\r|\n){2,}')
-
-
-@evalcontextfilter
-def nl2br(eval_ctx, value):
-    result = u'\n\n'.join(u'<p>%s</p>' % p.replace('\n', Markup('<br>\n'))
-                          for p in _paragraph_re.split(escape(value)))
-    if eval_ctx.autoescape:
-        result = Markup(result)
-    return result
 
 
 def slugify(post_title):
@@ -35,7 +23,7 @@ class Post(db.Model):
     slug = db.Column(db.String(140), unique=True)
     body = db.Column(db.Text)
     date = db.Column(db.DateTime, default=datetime.datetime.now())
-    rating = db.Column(db.Integer)
+    rating = db.Column(db.Integer, default=0)
 
     # параметр lazy='dynamic' говорит о том, что при обращении к свойству backref экземпляра класса Tag, мы получаем
     # объект класса BaseQuery, для чтобы чтобы можно было использовать его (у BaseQuery) специальные свойства/методы

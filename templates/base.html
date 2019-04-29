@@ -5,6 +5,7 @@
         <title>TipaBash.im - любимый сайт твоей мамы</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
     </head>
     <body>
         <header>
@@ -28,7 +29,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ url_for('adding') }}">
+                                <a href="{{ url_for('posts.post_add') }}">
                                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                                          width="25" height="25"
                                          viewBox="0 0 32 32"

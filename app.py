@@ -17,4 +17,3 @@ migrate = Migrate(app, db)
 manager = Manager(app)
 # регистрация команды для консоли для миграции
 manager.add_command('db', MigrateCommand)
-

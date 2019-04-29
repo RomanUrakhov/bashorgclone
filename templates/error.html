@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ error }}</h1>
+    <p><a href="{{ url_for('posts.index') }}">Спасись</a></p>
+{%  endblock %}

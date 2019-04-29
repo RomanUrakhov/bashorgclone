@@ -14,10 +14,7 @@
                       <a class="post_header_link" href="{{ url_for('posts.post_detail', slug=post.slug) }}"> #{{ post.id }} </a>
                   </header>
                   <div class="post_body">
-                      {% set post_strings_list = post.body.split('<BR>') %}
-                      {% for post_string in post_strings_list %}
-                          {{ post_string }}<br>
-                      {% endfor %}
+                      {{ post.body|nl2br }}
                   </div>
                   <footer class="post_footer">
                       <div class="post_button dislike" role="button" aria-label="Дизлукас" tabindex="0" title="Дизлукас">

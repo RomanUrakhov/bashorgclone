@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="form" action="{{ url_for('posts.post_add') }}" method="POST">
+
+        {{ form.title.label(class_='form_label') }}
+        {{ form.title(class_='form_input') }}
+
+        {{ form.body.label(class_='form_label') }}
+        {{ form.body(class="form_textarea") }}
+
+        <input type="submit" value="Отправить Путену" class="form_button">
+
+
+    </form>
+
+    <p>
+        Отправляя рофл, вы подтверждаете, что сделали вид, что прочитали
+        <a href="https://www.youtube.com/watch?v=G1IbRujko-A">правила</a>
+        и согласны с ними.
+    </p>
+
+{% endblock %}

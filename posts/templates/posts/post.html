@@ -9,11 +9,25 @@
         <ul class="pagination" >
 
             <li>
-                <a class="arrow" href="./?page={{ pages.prev_num }}">
+                <a {% if not pages.has_prev %} class="disabled" {% else %} class="arrow" {% endif %} href="./?page={{ pages.prev_num }}">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                     width="8.906" height="18"
                     viewBox="0 0 210 210"
-                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,210v-210h210v210z" fill="none"></path><g fill="#bfbfbf"><g id="surface1"><path d="M160.27644,29.27885c-0.63101,0.1262 -1.41977,0.18931 -2.01923,0.50481l-113.07692,56.53846c-3.21814,1.60908 -4.79567,4.10157 -4.79567,7.31971v22.71635c0,3.21815 1.57753,5.71064 4.79567,7.31971l113.07692,56.53846c4.85878,2.42938 11.35817,-1.67217 11.35817,-7.31971v-14.63942c0,-3.21815 -2.36629,-5.71064 -4.79567,-7.31971l-91.875,-45.9375l91.875,-45.9375c3.21815,-1.60908 4.79567,-4.10156 4.79567,-7.31971v-14.63942c0,-4.95342 -4.85877,-8.58173 -9.33894,-7.82452z"></path></g></g></g></svg>
+                    style=" fill:#000000;">
+                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray=""
+                                              stroke-dashoffset="0" font-family="none"
+                                              font-size="none" style="mix-blend-mode: normal">
+                        <path d="M0,210v-210h210v210z"fill="none"></path>
+                            <g fill="#bfbfbf">
+                                <g id="surface1">
+                                    <path d="M160.27644,29.27885c-0.63101,0.1262 -1.41977,0.18931 -2.01923,
+                                    0.50481l-113.07692,56.53846c-3.21814,1.60908 -4.79567,4.10157 -4.79567,
+                                    7.31971v22.71635c0,3.21815 1.57753,5.71064 4.79567,7.31971l113.07692,
+                                    56.53846c4.85878,2.42938 11.35817,-1.67217 11.35817,-7.31971v-14.63942c0,
+                                    -3.21815 -2.36629,-5.71064 -4.79567,-7.31971l-91.875,-45.9375l91.875,
+                                    -45.9375c3.21815,-1.60908 4.79567,-4.10156 4.79567,-7.31971v-14.63942c0,
+                                    -4.95342 -4.85877,-8.58173 -9.33894,-7.82452z"></path></g></g></g></svg>
                 </a>
             </li>
 
@@ -26,11 +40,11 @@
             {% endfor %}
 
             <li>
-                <a class="arrow" href="./?page={{ pages.next_num }}">
+                <a {% if not pages.has_next %} class="disabled" {% else %} class="arrow" {% endif %}  href="./?page={{ pages.next_num }}">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
                     width="8.906" height="18"
                     viewBox="0 0 210 210"
-                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,210v-210h210v210z" fill="none"></path><g fill="#bfbfbf"><g id="surface1"><path d="M47.95673,29.27885c-3.84915,0.37861 -7.57212,3.59676 -7.57212,7.82452v14.63942c0,3.21815 1.57753,5.71063 4.79567,7.31971l91.875,45.9375l-91.875,45.9375c-3.21814,1.60908 -4.79567,4.10157 -4.79567,7.31971v14.63942c0,5.64754 6.4994,9.7491 11.35817,7.31971l113.07692,-56.53846c3.21815,-1.60908 4.79567,-4.10156 4.79567,-7.31971v-22.71635c0,-3.21814 -2.36629,-5.71064 -4.79567,-7.31971l-113.07692,-56.53846c-1.19891,-0.59946 -2.49249,-0.63101 -3.78606,-0.50481z"></path></g></g></g></svg>
+                    style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-size="none" style="mix-blend-mode: normal"><path d="M0,210v-210h210v210z" fill="none"></path><g fill="#bfbfbf"><g id="surface1"><path d="M47.95673,29.27885c-3.84915,0.37861 -7.57212,3.59676 -7.57212,7.82452v14.63942c0,3.21815 1.57753,5.71063 4.79567,7.31971l91.875,45.9375l-91.875,45.9375c-3.21814,1.60908 -4.79567,4.10157 -4.79567,7.31971v14.63942c0,5.64754 6.4994,9.7491 11.35817,7.31971l113.07692,-56.53846c3.21815,-1.60908 4.79567,-4.10156 4.79567,-7.31971v-22.71635c0,-3.21814 -2.36629,-5.71064 -4.79567,-7.31971l-113.07692,-56.53846c-1.19891,-0.59946 -2.49249,-0.63101 -3.78606,-0.50481z"></path></g></g></g></svg>
                 </a>
             </li>
         </ul>

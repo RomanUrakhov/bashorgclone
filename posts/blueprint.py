@@ -1,10 +1,11 @@
 from flask import Blueprint, render_template
 
-from models import Post, Tag
+from models import Post
 
 from flask import request
 from posts.forms import PostForm
 from app import db
+import config
 
 from flask import redirect
 from flask import url_for
@@ -36,6 +37,23 @@ def page_not_found(e):
     return render_template('error.html', error=e), 500
 
 
+@posts.route('/<slug>/edit/', methods=['POST', 'GET'])
+def edit_post(slug):
+    post = Post.query.filter(Post.slug == slug).first()
+
+    if request.method == 'POST':
+        # Если у объекта, который присваивается в obj есть атрибуты, соответствующие
+        # атрибутам формы, то они подставляются (поля title и body)
+        form = PostForm(formdata=request.form, obj=post)
+        form.populate_obj(post)
+        db.session.commit()
+
+        return redirect(url_for('posts.post_detail', slug=post.slug))
+
+    form = PostForm(obj=post)
+    return render_template('posts/edit_post.html', post=post, form=form)
+
+
 @posts.route('/')
 def index():
     page = request.args.get('page')
@@ -45,7 +63,7 @@ def index():
         page = 1
 
     posts_list = Post.query.order_by(Post.date.desc())
-    pages = posts_list.paginate(page=page, per_page=2)
+    pages = posts_list.paginate(page, config.Configuration.POSTS_PER_PAGE)
 
     return render_template('posts/post.html', pages=pages)
 
@@ -53,26 +71,26 @@ def index():
 @posts.route('/<slug>')
 def post_detail(slug):
     post = Post.query.filter(Post.slug == slug).first()
-    tags = post.tags
-    return render_template('posts/detail.html', coolstory=post, tags=tags)
 
+    if post is not None:
+        return render_template('posts/detail.html', post=post)
 
-@posts.route('/tag/<slug>')
-def posts_by_tag(slug):
-    tag = Tag.query.filter(Tag.slug == slug).first()
-    posts_list = tag.relevant_posts.all()
-    return render_template('posts/topics.html', tag=tag, coolstories=posts_list)
+    return redirect(url_for('posts.index'))
 
 
 @posts.route('/search')
-def post_search():
+@posts.route('/search/<int:page>')
+def post_search(page=1):
     query = request.args.get('text')
     if query:
-        posts_list = Post.query.filter(Post.body.contains(query)).all()
+        posts_list = Post.query.filter(Post.body.contains(query))
+        if posts_list.all():
+            pages = posts_list.paginate(page, config.Configuration.POSTS_PER_PAGE)
+            return render_template('search.html', coolstories=posts_list, pages=pages, q=query)
+        else:
+            return render_template('search.html', messgae=query)
 
-    else:
-        posts_list = ''
-    return render_template('search.html', coolstories=posts_list)
+    return render_template('search.html')
 
 
 _paragraph_re = re.compile(r'(?:\r\n|\r(?!\n)|\n){2,}')

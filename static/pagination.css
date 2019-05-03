@@ -31,3 +31,8 @@
     width: 8.906px;
     height: 18px;
 }
+
+.disabled{
+    pointer-events: none;
+    visibility: hidden;
+}

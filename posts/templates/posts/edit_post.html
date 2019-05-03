@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form class="form" action="{{ url_for('posts.edit_post', slug=post.slug) }}" method="POST">
+
+        {{ form.title.label(class_='form_label') }}
+        {{ form.title(class_='form_input') }}
+
+        {{ form.body.label(class_='form_label') }}
+        {{ form.body(class="form_textarea") }}
+
+        <input type="submit" value="Отправить Путену" class="form_button">
+
+    </form>
+
+{% endblock %}

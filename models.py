@@ -4,9 +4,12 @@ import re
 
 
 def slugify(post_title):
-    pattern = r'[^\w+]'
+    pattern = r'([^-\w+]{1,})'
     # 1 арг. -- что ищем, 2 арг. -- на что заменяем
-    return re.sub(pattern, '-', post_title)
+    res_slug = re.sub(pattern, '-', post_title)
+    end_pattern = r'^-|-$'
+    res_slug = re.sub(end_pattern, '', res_slug)
+    return res_slug
 
 
 # Класс отвечающий за хранение постов

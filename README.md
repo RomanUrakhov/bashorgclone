@@ -1,3 +1,7 @@
 # bashorgclone
-
-Another readme...
+ 
+ Done:
+  1. верстка
+  2. парсинг
+  3. регулярки
+  4. алидация
